@@ -107,8 +107,12 @@ export async function POST(request: NextRequest) {
       try {
         // updateContact crée le contact s'il n'existe pas, ou le met à jour
         // La propriété "source" permet de savoir d'où vient le contact
-        const loopsResp = await loops.updateContact(email, {
-          source: "landing-page-tdah",
+        // Un seul objet en argument (pas deux)
+        const loopsResp = await loops.updateContact({
+          email: email,
+          properties: {
+            source: "landing-page-tdah",
+          },
         });
         console.log("Contact ajouté dans Loops.so :", loopsResp);
       } catch (loopsError) {
