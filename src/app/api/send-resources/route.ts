@@ -38,8 +38,10 @@ export async function POST(request: NextRequest) {
     // L'adresse "from" vient de la variable d'environnement
     // En dev : onboarding@resend.dev (domaine de test Resend)
     // En prod : votre domaine vérifié
-    const fromEmail =
-      process.env.RESEND_FROM_EMAIL || "TDAH Adulte <onboarding@resend.dev>";
+    // On ajoute le nom d'affichage "TDAH Adulte" devant l'email
+    // La variable RESEND_FROM_EMAIL contient juste l'email (ex: no-reply@dopasysteme.com)
+    const rawEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+    const fromEmail = `TDAH Adulte <${rawEmail}>`;
 
     console.log("Envoi de l'email via Resend depuis :", fromEmail);
 

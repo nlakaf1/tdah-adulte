@@ -37,8 +37,9 @@ export async function POST(request: NextRequest) {
     // L'email est envoyé à CONTACT_EMAIL (défini dans .env.local)
     const contactEmail =
       process.env.CONTACT_EMAIL || "votre-email@exemple.com";
-    const fromEmail =
-      process.env.RESEND_FROM_EMAIL || "TDAH Adulte <onboarding@resend.dev>";
+    // On ajoute le nom d'affichage devant l'email brut
+    const rawEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+    const fromEmail = `TDAH Adulte <${rawEmail}>`;
 
     console.log("Envoi de la notification de contact à :", contactEmail);
 
