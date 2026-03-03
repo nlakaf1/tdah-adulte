@@ -1,5 +1,5 @@
 // ============================================
-// Template d'email React pour l'envoi des ressources
+// Template d'email React pour l'envoi des ressources DOPA4
 // Utilise @react-email/components pour un rendu HTML compatible email
 // Cet email est envoyé automatiquement quand un utilisateur soumet son email
 // ============================================
@@ -14,11 +14,12 @@ import {
   Button,
   Hr,
   Preview,
+  Link,
 } from "@react-email/components";
 
 // --- Props du composant email ---
-// downloadExcelUrl : lien vers le tableur Excel
-// downloadKitUrl : lien vers le kit de démarrage PDF
+// downloadExcelUrl : lien vers le Calculateur (worksheet HTML)
+// downloadKitUrl : lien vers le Kit de Démarrage (PDF interactif)
 interface ResourceEmailProps {
   downloadExcelUrl: string;
   downloadKitUrl: string;
@@ -39,7 +40,7 @@ export default function ResourceEmail({
 
       {/* Preview : texte affiché dans l'aperçu de l'email (avant ouverture) */}
       <Preview>
-        Vos ressources TDAH gratuites sont prêtes à télécharger
+        Ton Kit de Démarrage DOPA4 est prêt à télécharger
       </Preview>
 
       {/* Body : corps de l'email avec styles inline (obligation des emails) */}
@@ -48,54 +49,109 @@ export default function ResourceEmail({
         <Container style={containerStyle}>
           {/* --- En-tête de l'email --- */}
           <Section style={headerStyle}>
-            <Text style={headerTitleStyle}>TDAH Adulte</Text>
+            <Text style={headerTitleStyle}>DOPA4</Text>
+            <Text style={headerSubtitleStyle}>Communauté TDAH Adulte</Text>
           </Section>
 
           {/* --- Contenu principal --- */}
           <Section style={contentStyle}>
-            {/* Message de bienvenue */}
-            <Text style={greetingStyle}>Bonjour,</Text>
+            {/* Message de bienvenue - ton direct et chaleureux */}
+            <Text style={greetingStyle}>Salut,</Text>
 
             <Text style={paragraphStyle}>
-              Merci pour votre intérêt ! Voici vos deux ressources gratuites,
-              complémentaires au e-book TDAH Adulte. Cliquez sur les boutons
-              ci-dessous pour les télécharger.
+              Bienvenue dans la communauté DOPA4.
             </Text>
 
-            {/* --- Bouton de téléchargement : Tableur Excel --- */}
-            <Section style={resourceBlockStyle}>
-              <Text style={resourceTitleStyle}>
-                Tableur Excel - Dépenses Fixes
-              </Text>
-              <Text style={resourceDescStyle}>
-                Calculez et suivez toutes vos dépenses fixes mensuelles en un
-                coup d&apos;oeil.
-              </Text>
-              <Button style={buttonStyle} href={downloadExcelUrl}>
-                Télécharger le tableur Excel
+            <Text style={paragraphStyle}>
+              Ton Kit de Démarrage est prêt — clique sur le bouton ci-dessous
+              pour le télécharger.
+            </Text>
+
+            {/* --- Bouton principal de téléchargement : Kit DOPA4 --- */}
+            <Section style={ctaBlockStyle}>
+              <Button style={ctaButtonStyle} href={downloadKitUrl}>
+                TÉLÉCHARGER MON KIT DOPA4
               </Button>
             </Section>
 
-            {/* --- Bouton de téléchargement : Kit de démarrage --- */}
+            {/* --- Ce que contient le kit --- */}
+            <Text style={sectionTitleStyle}>
+              Ce que tu trouveras à l&apos;intérieur :
+            </Text>
+
+            {/* Liste des ressources incluses dans le kit */}
+            <Text style={listItemStyle}>
+              → <strong>Le Calculateur de Répartition Automatique</strong> (les
+              pourcentages exacts pour tes comptes — tu remplis les cases bleues,
+              il fait les maths)
+            </Text>
+            <Text style={listItemStyle}>
+              → <strong>La Checklist de Démarrage Rapide</strong> (les 5
+              premières actions dans l&apos;ordre)
+            </Text>
+            <Text style={listItemStyle}>
+              → <strong>Le Template &quot;Moment Argent&quot;</strong> (ta fiche
+              imprimable pour la session hebdomadaire de 15 minutes)
+            </Text>
+            <Text style={listItemStyle}>
+              → <strong>Le Protocole d&apos;Urgence anti-impulsivité</strong>
+            </Text>
+
+            {/* --- Bouton secondaire : Calculateur séparé --- */}
             <Section style={resourceBlockStyle}>
-              <Text style={resourceTitleStyle}>Kit de Démarrage Pratique</Text>
-              <Text style={resourceDescStyle}>
-                Fiches pratiques, check-lists et modèles de routines adaptés au
-                TDAH.
+              <Text style={resourceTitleStyle}>
+                Calculateur de Répartition Automatique
               </Text>
-              <Button style={buttonStyle} href={downloadKitUrl}>
-                Télécharger le kit de démarrage
+              <Text style={resourceDescStyle}>
+                Version interactive — remplis les cases bleues, il fait les
+                maths automatiquement.
+              </Text>
+              <Button style={secondaryButtonStyle} href={downloadExcelUrl}>
+                Ouvrir le Calculateur
               </Button>
             </Section>
 
             {/* Séparateur */}
             <Hr style={hrStyle} />
 
-            {/* --- Note d'information --- */}
-            <Text style={noteStyle}>
-              Ces liens restent actifs et vous pouvez les utiliser à tout moment.
-              Si vous avez des questions, n&apos;hésitez pas à nous contacter via
-              notre page de contact.
+            {/* --- Conseil pratique --- */}
+            <Section style={tipBlockStyle}>
+              <Text style={tipTitleStyle}>💡 Un seul conseil :</Text>
+              <Text style={tipTextStyle}>
+                Ne cherche pas à tout faire d&apos;un coup. Ouvre le
+                Calculateur, remplis l&apos;onglet &quot;Charges Fixes&quot;
+                (les cases bleues), et arrête-toi là pour aujourd&apos;hui.
+                20 minutes maximum. Le reste se calcule automatiquement.
+              </Text>
+              <Text style={tipHighlightStyle}>
+                Ton cerveau TDAH fonctionne mieux par petites victoires.
+                Celle-ci est la première.
+              </Text>
+            </Section>
+
+            {/* Séparateur */}
+            <Hr style={hrStyle} />
+
+            {/* --- Question / contact --- */}
+            <Text style={paragraphStyle}>
+              Une question ? Réponds à cet email, je lis tout.
+            </Text>
+
+            {/* --- Signature --- */}
+            <Text style={signatureStyle}>
+              À très vite,
+              <br />
+              Maxime
+            </Text>
+
+            {/* --- P.S. --- */}
+            <Text style={psStyle}>
+              P.S. Si tu n&apos;as pas encore le livre complet, il est
+              disponible sur{" "}
+              <Link href="https://www.amazon.fr" style={linkStyle}>
+                Amazon
+              </Link>
+              .
             </Text>
           </Section>
 
@@ -103,12 +159,12 @@ export default function ResourceEmail({
           {/* Le footer contient les mentions legales obligatoires pour eviter les spams */}
           <Section style={footerStyle}>
             <Text style={footerTextStyle}>
-              Vous recevez cet email car vous avez demandé les ressources
-              gratuites TDAH Adulte via notre site dopasysteme.com.
+              Tu reçois cet email car tu as demandé le Kit de Démarrage DOPA4
+              via dopasysteme.com.
             </Text>
             <Text style={footerTextStyle}>
-              &copy; {new Date().getFullYear()} TDAH Adulte - DopaSystème.
-              Tous droits réservés.
+              &copy; {new Date().getFullYear()} DOPA4 - DopaSystème. Tous
+              droits réservés.
             </Text>
             <Text style={footerTextStyle}>
               DopaSystème - dopasysteme.com
@@ -142,46 +198,96 @@ const containerStyle = {
   overflow: "hidden" as const,
 };
 
+// --- Header : fond bleu foncé avec titre DOPA4 ---
 const headerStyle = {
   backgroundColor: "#1e3a5f",
-  padding: "24px 32px",
+  padding: "28px 32px 20px",
   textAlign: "center" as const,
 };
 
 const headerTitleStyle = {
   color: "#ffffff",
-  fontSize: "24px",
+  fontSize: "28px",
   fontWeight: "bold" as const,
   margin: "0" as const,
+  letterSpacing: "2px",
+};
+
+// Sous-titre du header
+const headerSubtitleStyle = {
+  color: "#a3bfdb",
+  fontSize: "13px",
+  margin: "4px 0 0" as const,
+  letterSpacing: "1px",
 };
 
 const contentStyle = {
   padding: "32px",
 };
 
+// --- Salutation : ton direct et chaleureux ---
 const greetingStyle = {
   fontSize: "18px",
   fontWeight: "600" as const,
   color: "#1a2332",
-  marginBottom: "8px",
+  marginBottom: "4px",
 };
 
 const paragraphStyle = {
   fontSize: "16px",
   lineHeight: "1.6",
   color: "#4a5568",
-  marginBottom: "24px",
+  marginBottom: "16px",
 };
 
+// --- Bloc CTA principal : bouton de téléchargement du Kit ---
+const ctaBlockStyle = {
+  textAlign: "center" as const,
+  margin: "28px 0",
+};
+
+// Bouton CTA principal (gros, visible, teal accent)
+const ctaButtonStyle = {
+  backgroundColor: "#0d9488",
+  color: "#ffffff",
+  padding: "16px 32px",
+  borderRadius: "8px",
+  fontSize: "16px",
+  fontWeight: "bold" as const,
+  textDecoration: "none" as const,
+  display: "inline-block" as const,
+  letterSpacing: "0.5px",
+};
+
+// --- Titre de section "Ce que tu trouveras" ---
+const sectionTitleStyle = {
+  fontSize: "16px",
+  fontWeight: "bold" as const,
+  color: "#1e3a5f",
+  marginBottom: "12px",
+  marginTop: "24px",
+};
+
+// --- Items de la liste des ressources ---
+const listItemStyle = {
+  fontSize: "15px",
+  lineHeight: "1.6",
+  color: "#4a5568",
+  marginBottom: "8px",
+  paddingLeft: "4px",
+};
+
+// --- Bloc ressource secondaire (Calculateur) ---
 const resourceBlockStyle = {
   backgroundColor: "#f0f5ff",
   borderRadius: "8px",
   padding: "20px",
+  marginTop: "24px",
   marginBottom: "16px",
 };
 
 const resourceTitleStyle = {
-  fontSize: "16px",
+  fontSize: "15px",
   fontWeight: "bold" as const,
   color: "#1e3a5f",
   marginBottom: "4px",
@@ -193,10 +299,11 @@ const resourceDescStyle = {
   marginBottom: "12px",
 };
 
-const buttonStyle = {
+// Bouton secondaire (outline style)
+const secondaryButtonStyle = {
   backgroundColor: "#1e3a5f",
   color: "#ffffff",
-  padding: "12px 24px",
+  padding: "10px 20px",
   borderRadius: "6px",
   fontSize: "14px",
   fontWeight: "600" as const,
@@ -209,12 +316,62 @@ const hrStyle = {
   margin: "24px 0",
 };
 
-const noteStyle = {
+// --- Bloc conseil pratique ---
+const tipBlockStyle = {
+  backgroundColor: "#fffbeb",
+  borderRadius: "8px",
+  padding: "20px",
+  borderLeft: "4px solid #f59e0b",
+};
+
+const tipTitleStyle = {
+  fontSize: "15px",
+  fontWeight: "bold" as const,
+  color: "#92400e",
+  marginBottom: "8px",
+  marginTop: "0" as const,
+};
+
+const tipTextStyle = {
+  fontSize: "14px",
+  lineHeight: "1.6",
+  color: "#78350f",
+  marginBottom: "8px",
+};
+
+// Phrase motivante en gras
+const tipHighlightStyle = {
+  fontSize: "14px",
+  lineHeight: "1.6",
+  color: "#78350f",
+  fontWeight: "bold" as const,
+  fontStyle: "italic" as const,
+  marginBottom: "0" as const,
+};
+
+// --- Signature ---
+const signatureStyle = {
+  fontSize: "16px",
+  color: "#1a2332",
+  lineHeight: "1.6",
+  marginTop: "8px",
+};
+
+// --- P.S. : lien Amazon ---
+const psStyle = {
   fontSize: "14px",
   color: "#718096",
   lineHeight: "1.5",
+  marginTop: "20px",
 };
 
+// Lien cliquable dans le P.S.
+const linkStyle = {
+  color: "#0d9488",
+  textDecoration: "underline" as const,
+};
+
+// --- Footer ---
 const footerStyle = {
   backgroundColor: "#f7fafc",
   padding: "16px 32px",
