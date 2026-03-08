@@ -13,11 +13,11 @@ import FooterSection from "@/components/sections/FooterSection";
 export const metadata: Metadata = {
   title: "Contact - TDAH Adulte | Contactez-nous",
   description:
-    "Vous avez une question sur le e-book TDAH Adulte ou les ressources gratuites ? Contactez-nous via notre formulaire.",
+    "Vous avez une question sur le livre TDAH Adulte ou les ressources gratuites ? Contactez-nous via notre formulaire.",
   openGraph: {
     title: "Contact - TDAH Adulte | Contactez-nous",
     description:
-      "Contactez l'equipe TDAH Adulte pour toute question ou retour sur le e-book et les ressources.",
+      "Contactez l'equipe TDAH Adulte pour toute question ou retour sur le livre et les ressources.",
     type: "website",
     locale: "fr_FR",
     siteName: "TDAH Adulte",

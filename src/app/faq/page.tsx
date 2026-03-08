@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FAQ - TDAH Adulte | Questions frequentes",
     description:
-      "Tout ce que vous devez savoir sur les ressources gratuites complementaires au e-book TDAH Adulte.",
+      "Tout ce que vous devez savoir sur les ressources gratuites complementaires au livre TDAH Adulte.",
     type: "website",
     locale: "fr_FR",
     siteName: "TDAH Adulte",

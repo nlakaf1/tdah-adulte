@@ -1,6 +1,7 @@
 "use client";
 
 // Importation des dépendances nécessaires pour le composant Hero
+import Image from "next/image";
 import SectionWrapper from "@/components/shared/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import {
@@ -47,7 +48,7 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 bg-accent text-primary px-4 py-2 rounded-full text-sm font-medium">
             {/* Icône étoile scintillante pour symboliser le cadeau */}
             <SparklesIcon className="size-5" />
-            Complément offert du e-book
+            Complément offert du livre
           </div>
 
           {/* Titre principal H1 - Message principal de la page */}
@@ -76,12 +77,13 @@ export default function HeroSection() {
                 // bg-white/80 = fond blanc avec 80% d'opacité pour effet de transparence
                 <div
                   key={index}
-                  className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-border shadow-sm hover:shadow-md transition-shadow"
+                  className="rounded-xl p-4 border border-[#E8DFD0] shadow-sm hover:shadow-md transition-shadow"
+                  style={{ backgroundColor: "#F5F0E8" }}
                 >
                   {/* Conteneur flex pour aligner l'icône et le texte horizontalement */}
                   <div className="flex items-start gap-4">
                     {/* Icône de la ressource dans un cercle coloré */}
-                    <div className="bg-accent text-primary p-3 rounded-lg shrink-0">
+                    <div className="p-3 rounded-lg shrink-0" style={{ backgroundColor: "#F2E0E3", color: "#8B1A2B" }}>
                       <Icon className="size-6" />
                     </div>
 
@@ -117,18 +119,21 @@ export default function HeroSection() {
         </div>
 
         {/* ============================================
-            COLONNE DROITE - ÉLÉMENT VISUEL DÉCORATIF
+            COLONNE DROITE - IMAGE DU LIVRE
             ============================================ */}
-        <div className="relative hidden lg:flex items-center justify-center">
-          {/* Premier cercle décoratif avec dégradé bleu et effet de flou */}
-          {/* absolute pour superposer plusieurs cercles */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-blue-medium to-blue-deep rounded-full blur-3xl opacity-20 animate-pulse"></div>
+        <div className="relative flex items-center justify-center">
+          {/* Cercle decoratif derriere le livre pour effet de profondeur */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-blue-medium to-blue-deep rounded-full blur-3xl opacity-15"></div>
 
-          {/* Deuxieme cercle decoratif plus petit pour creer de la profondeur */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-blue-light to-blue-medium rounded-full blur-2xl opacity-30"></div>
-
-          {/* Troisieme cercle decoratif encore plus petit au centre */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-accent-cta to-blue-medium rounded-full blur-xl opacity-40"></div>
+          {/* Image du livre PNG transparent, fond deja retire */}
+          <Image
+            src="/images/hero-book.png"
+            alt="Livre TDAH Gérer Son Argent Sans Volonté Ni Discipline par Maxime Wells - Routines automatiques pour adultes"
+            width={2300}
+            height={2300}
+            className="relative z-10 drop-shadow-2xl scale-125 -translate-y-8"
+            priority
+          />
         </div>
       </div>
     </SectionWrapper>

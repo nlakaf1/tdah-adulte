@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "dépenses fixes",
     "kit démarrage TDAH",
     "organisation TDAH",
-    "e-book TDAH",
+    "livre TDAH",
   ],
   // Auteur du site
   authors: [{ name: "TDAH Adulte" }],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TDAH Adulte - Vos outils pratiques offerts",
     description:
-      "Tableur Excel pour vos dépenses fixes + kit de démarrage pratique. Gratuit pour les lecteurs du e-book.",
+      "Tableur Excel pour vos dépenses fixes + kit de démarrage pratique. Gratuit pour les lecteurs du livre.",
     type: "website",
     locale: "fr_FR",
     siteName: "TDAH Adulte",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TDAH Adulte - Vos outils pratiques offerts",
     description:
-      "Tableur Excel pour vos dépenses fixes + kit de démarrage pratique. Gratuit pour les lecteurs du e-book.",
+      "Tableur Excel pour vos dépenses fixes + kit de démarrage pratique. Gratuit pour les lecteurs du livre.",
   },
   // Robots : autorise l'indexation par les moteurs de recherche
   robots: {

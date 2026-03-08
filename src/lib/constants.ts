@@ -66,7 +66,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "C'est vraiment gratuit ?",
     answer:
-      "Oui, 100 % gratuit, sans engagement et sans carte bancaire. Ces ressources sont un complément offert aux lecteurs du e-book pour vous aider à passer à l'action concrètement.",
+      "Oui, 100 % gratuit, sans engagement et sans carte bancaire. Ces ressources sont un complément offert aux lecteurs du livre pour vous aider à passer à l'action concrètement.",
   },
   {
     question: "À quoi sert le tableur Excel ?",
@@ -97,7 +97,7 @@ export const ABOUT_CONTENT = {
   mission:
     "Notre mission est de rendre la gestion du quotidien plus simple et plus accessible pour les adultes vivant avec un TDAH.",
   story:
-    "En tant que personnes concernées par le TDAH, nous savons à quel point il peut être difficile de s'organiser, de gérer ses finances et de mettre en place des routines stables. C'est pourquoi nous avons créé ce e-book et ces outils complémentaires : pour offrir des solutions concrètes, simples et immédiatement utilisables.",
+    "En tant que personnes concernées par le TDAH, nous savons à quel point il peut être difficile de s'organiser, de gérer ses finances et de mettre en place des routines stables. C'est pourquoi nous avons créé ce livre et ces outils complémentaires : pour offrir des solutions concrètes, simples et immédiatement utilisables.",
   values:
     "Nous croyons que chaque personne mérite des outils adaptés à son fonctionnement. Pas de théorie abstraite, uniquement de la pratique.",
 };

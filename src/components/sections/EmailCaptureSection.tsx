@@ -30,6 +30,9 @@ export default function EmailCaptureSection() {
   // État local pour indiquer si l'email a été soumis avec succès
   const [isSuccess, setIsSuccess] = useState(false);
 
+  // État local pour le consentement RGPD (JAMAIS pré-coché, obligatoire)
+  const [consent, setConsent] = useState(false);
+
   // Log dans la console pour tracker le rendu du composant
   console.log('EmailCaptureSection rendue', { email, isLoading, isSuccess });
 
@@ -44,6 +47,12 @@ export default function EmailCaptureSection() {
     // Validation basique de l'email (ne pas soumettre si vide)
     if (!email || !email.includes('@')) {
       toast.error('Veuillez entrer une adresse email valide.');
+      return;
+    }
+
+    // Verification du consentement RGPD (obligatoire)
+    if (!consent) {
+      toast.error('Veuillez accepter la politique de confidentialité.');
       return;
     }
 
@@ -125,13 +134,30 @@ export default function EmailCaptureSection() {
                 {/* Bouton de soumission du formulaire */}
                 <Button
                   type="submit"
-                  disabled={isLoading || !email}
+                  disabled={isLoading || !email || !consent}
                   className="sm:w-auto w-full"
                 >
                   {/* Texte du bouton change pendant le chargement */}
                   {isLoading ? 'Envoi en cours...' : EMAIL_BUTTON_TEXT}
                 </Button>
               </div>
+
+              {/* Case a cocher RGPD - JAMAIS pre-cochee (obligation legale) */}
+              <label className="flex items-start gap-3 cursor-pointer mt-2">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-1 h-4 w-4 rounded border-gray-300 accent-[#8B1A2B] shrink-0"
+                />
+                <span className="text-sm text-muted-foreground leading-snug">
+                  J&apos;accepte de recevoir les bonus gratuits et les emails de
+                  Maxime Wells. Je peux me désinscrire à tout moment en un clic.{' '}
+                  <a href="/confidentialite" className="underline hover:text-foreground transition-colors">
+                    Politique de confidentialité
+                  </a>
+                </span>
+              </label>
             </form>
           )}
         </CardContent>
