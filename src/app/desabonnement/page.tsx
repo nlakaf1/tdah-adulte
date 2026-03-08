@@ -4,6 +4,7 @@
 // Le contenu interactif est délégué au composant client UnsubscribeContent
 // ============================================
 
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import PageHeroBanner from "@/components/shared/PageHeroBanner";
 import FooterSection from "@/components/sections/FooterSection";
@@ -33,8 +34,11 @@ export default function DesabonnementPage() {
       />
 
       {/* Contenu interactif (client component) */}
-      {/* Lit le paramètre ?email= de l'URL et appelle l'API */}
-      <UnsubscribeContent />
+      {/* Suspense requis car UnsubscribeContent utilise useSearchParams() */}
+      {/* Sans Suspense, Next.js ne peut pas prerender la page en statique */}
+      <Suspense fallback={<div className="py-16 text-center text-foreground">Chargement...</div>}>
+        <UnsubscribeContent />
+      </Suspense>
 
       {/* Pied de page */}
       <FooterSection />
