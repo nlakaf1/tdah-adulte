@@ -215,11 +215,35 @@ export default function MentionsLegalesPage() {
         </section>
 
         {/* ============================================
-            SECTION 6 : Droit applicable et juridiction
+            SECTION 6 : Cookies
             ============================================ */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-foreground mb-1">
-            6. Droit applicable et juridiction compétente
+            6. Cookies
+          </h2>
+          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+
+          {/* Politique d'utilisation des cookies sur le site */}
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Le site dopasysteme.com utilise des cookies techniques
+              nécessaires à son fonctionnement. Ces cookies ne collectent
+              aucune donnée personnelle à des fins publicitaires ou de suivi.
+            </p>
+            <p>
+              Vous pouvez configurer votre navigateur pour refuser les cookies.
+              Cela n'affectera pas votre capacité à télécharger les ressources
+              gratuites proposées sur le site.
+            </p>
+          </div>
+        </section>
+
+        {/* ============================================
+            SECTION 7 : Droit applicable et juridiction
+            ============================================ */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-foreground mb-1">
+            7. Droit applicable et juridiction compétente
           </h2>
           <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
 

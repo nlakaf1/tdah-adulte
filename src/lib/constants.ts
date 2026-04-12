@@ -19,11 +19,19 @@ export const DOWNLOAD_URLS = {
   starterKit: `${SITE_URL}/downloads/kit-demarrage-tdah.pdf`,
 };
 
-// --- Section Hero ---
-export const HERO_HEADLINE = "Vos outils pratiques TDAH, offerts.";
+// --- Section Hero (Option A — bénéfice émotionnel) ---
+export const HERO_EYEBROW = "COMPLÉMENT OFFERT DU LIVRE";
+export const HERO_HEADLINE =
+  "Reprenez le contrôle de vos finances — sans volonté, sans discipline, sans culpabilité.";
 export const HERO_SUBHEADLINE =
-  "Vous avez lu le livre, passez à l'action. Recevez gratuitement un tableur Excel pour calculer vos dépenses fixes et un kit de démarrage pratique pour organiser votre quotidien.";
-export const HERO_CTA_TEXT = "Recevoir mes ressources gratuites";
+  "Les outils gratuits qui complètent la Méthode DOPA4, conçus pour le cerveau TDAH adulte.";
+export const HERO_CTA_TEXT = "Recevoir mes outils gratuits";
+// Micro-réassurance affichée sous le bouton CTA
+export const HERO_REASSURANCE = [
+  "Réception immédiate par email",
+  "100% gratuit",
+  "Aucun spam",
+];
 
 // --- Section Email Capture ---
 export const EMAIL_SECTION_TITLE = "Recevez vos ressources gratuites";
@@ -36,18 +44,18 @@ export const EMAIL_SUCCESS_MESSAGE =
 export const EMAIL_ERROR_MESSAGE =
   "Une erreur est survenue. Veuillez réessayer.";
 
-// --- Descriptions des ressources ---
+// --- Descriptions des ressources (optimisées : bénéfice clair + temps d'utilisation) ---
 export const RESOURCES = [
   {
-    title: "Tableur Excel - Dépenses Fixes",
+    title: "Tableur DOPA4 — Vos dépenses fixes en 10 minutes",
     description:
-      "Un tableur prêt à l'emploi pour calculer et suivre toutes vos dépenses fixes mensuelles. Visualisez clairement où va votre argent et identifiez les économies possibles.",
+      "Le tableur que vous remplissez une seule fois. Il calcule automatiquement vos dépenses fixes, votre marge réelle, et vous donne les pourcentages exacts à appliquer pour la Méthode DOPA4. Compatible Excel et Google Sheets.",
     icon: "table" as const,
   },
   {
     title: "Kit de Démarrage Pratique",
     description:
-      "Un guide pas-à-pas avec des exercices concrets, des check-lists et des modèles pour mettre en place des routines adaptées au TDAH dès aujourd'hui.",
+      "Un guide PDF de 17 pages avec cases à cocher interactives. Auto-évaluation, checklist de configuration, template « Moment Argent » mensuel et protocole d'urgence anti-impulsivité. Conçu pour être utilisé en 30 minutes, pas plus.",
     icon: "rocket" as const,
   },
 ];
@@ -61,46 +69,48 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Comment vais-je recevoir les ressources ?",
     answer:
-      "Dès que vous entrez votre adresse email, vous recevez un email automatique contenant les liens de téléchargement pour le tableur Excel et le kit de démarrage. Pensez à vérifier votre dossier spam si vous ne le voyez pas dans votre boîte de réception.",
+      "Immédiatement après votre inscription, vous recevrez un email contenant les liens de téléchargement directs pour le Tableur Excel et le Kit de Démarrage PDF. Aucune attente. Si vous ne le voyez pas dans votre boîte de réception, vérifiez vos spams ou la catégorie « Promotions ».",
   },
   {
     question: "C'est vraiment gratuit ?",
     answer:
-      "Oui, 100 % gratuit, sans engagement et sans carte bancaire. Ces ressources sont un complément offert aux lecteurs du livre pour vous aider à passer à l'action concrètement.",
+      "Oui, 100% gratuit. Ces ressources sont le complément offert du livre « Gérer son argent sans volonté ni discipline » et de la Méthode DOPA4. Aucune carte bancaire demandée, jamais.",
   },
   {
     question: "À quoi sert le tableur Excel ?",
     answer:
-      "Le tableur vous permet de lister toutes vos dépenses fixes (loyer, abonnements, assurances...) et de calculer automatiquement le total mensuel. C'est un outil simple et visuel pour reprendre le contrôle de vos finances.",
+      "Il calcule automatiquement vos dépenses fixes mensuelles et vous donne la répartition exacte à appliquer entre vos comptes selon la Méthode DOPA4. C'est le point de départ pour configurer votre système financier en pilote automatique.",
   },
   {
-    question: "Que contient le kit de démarrage ?",
+    question: "Mes données sont-elles en sécurité ?",
     answer:
-      "Le kit contient des fiches pratiques, des check-lists quotidiennes et des modèles de routines adaptés aux personnes avec un TDAH. Il est conçu pour être utilisé immédiatement, sans préparation.",
+      "Oui. Votre adresse email est uniquement utilisée pour vous envoyer les ressources et les emails de suivi liés à la Méthode DOPA4. Nous ne vendons, ne louons et ne partageons jamais vos données. Vous pouvez vous désinscrire en un clic à tout moment.",
   },
   {
-    question: "Comment mon adresse email est-elle utilisée ?",
+    question: "Faut-il avoir un diagnostic TDAH pour utiliser ces outils ?",
     answer:
-      "Votre email est uniquement utilisé pour vous envoyer les ressources. Nous ne partageons jamais vos données avec des tiers et vous ne recevrez aucun spam.",
+      "Non. Ces outils sont conçus pour les adultes qui se reconnaissent dans le fonctionnement TDAH (diagnostiqués ou non). Ils fonctionnent particulièrement bien si vous avez déjà essayé plusieurs méthodes classiques sans succès.",
   },
   {
-    question: "Les ressources sont-elles compatibles avec tous les appareils ?",
+    question: "Y a-t-il un livre complet ?",
     answer:
-      "Le tableur Excel fonctionne avec Microsoft Excel, Google Sheets et LibreOffice. Le kit de démarrage est au format PDF, lisible sur tous les appareils (ordinateur, tablette, smartphone).",
+      "Oui. Ces ressources sont le complément offert d'un livre qui détaille la Méthode DOPA4 complète : Distribuer, Oublier, Protéger, Alimenter. Le livre est disponible sur Amazon (lien dans l'email de bienvenue).",
   },
 ];
 
-// --- Section À Propos ---
-export const ABOUT_TITLE = "À propos";
-export const ABOUT_SUBTITLE = "Pourquoi nous avons créé ces ressources.";
-export const ABOUT_CONTENT = {
-  mission:
-    "Notre mission est de rendre la gestion du quotidien plus simple et plus accessible pour les adultes vivant avec un TDAH.",
-  story:
-    "En tant que personnes concernées par le TDAH, nous savons à quel point il peut être difficile de s'organiser, de gérer ses finances et de mettre en place des routines stables. C'est pourquoi nous avons créé ce livre et ces outils complémentaires : pour offrir des solutions concrètes, simples et immédiatement utilisables.",
-  values:
-    "Nous croyons que chaque personne mérite des outils adaptés à son fonctionnement. Pas de théorie abstraite, uniquement de la pratique.",
-};
+// --- Section À Propos (version "vous" — centrée sur le visiteur) ---
+export const ABOUT_TITLE = "Pourquoi ces outils existent";
+export const ABOUT_SUBTITLE = "";
+// Paragraphes narratifs qui parlent directement au visiteur
+export const ABOUT_PARAGRAPHS = [
+  "Si vous êtes ici, vous avez probablement déjà essayé. Les apps de budget. Les tableurs Excel téléchargés un dimanche soir. Les bonnes résolutions du 1er janvier.",
+  "Et rien n'a tenu plus de 3 semaines.",
+  "Ce n'est pas votre faute. Ces outils sont conçus pour des cerveaux neurotypiques — pas pour le vôtre.",
+  "La Méthode DOPA4 part du principe inverse : votre cerveau TDAH ne manque pas de volonté, il manque de systèmes qui fonctionnent SANS volonté.",
+  "Les ressources que vous allez télécharger sont les premiers blocs de ce système. Configurez-les ce weekend. Oubliez-les ensuite.",
+];
+// Signature de l'auteur affichée en bas de la section
+export const ABOUT_SIGNATURE = "— Maxime Wells, auteur de la Méthode DOPA4";
 
 // --- Section Contact ---
 export const CONTACT_TITLE = "Contactez-nous";
@@ -120,10 +130,11 @@ export const NAV_ITEMS = [
 export const NAV_CTA_TEXT = "Recevoir mes ressources";
 
 // --- Footer ---
-export const FOOTER_TEXT = `© ${new Date().getFullYear()} ${SITE_NAME}. Tous droits réservés.`;
+// Copyright au nom de l'auteur (distinct de SITE_NAME utilisé dans le header)
+export const FOOTER_TEXT = `© ${new Date().getFullYear()} Maxime Wells. Tous droits réservés.`;
 export const FOOTER_LINKS = [
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
-  { label: "Politique de confidentialité", href: "#" },
-  { label: "Mentions légales", href: "#" },
+  { label: "Politique de confidentialité", href: "/confidentialite" },
+  { label: "Mentions légales", href: "/mentions-legales" },
 ];
