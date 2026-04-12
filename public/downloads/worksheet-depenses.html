@@ -945,6 +945,90 @@ body {
 </div>
 
 <script>
+// ===== LOCALSTORAGE — Clé unique pour ce worksheet =====
+const STORAGE_KEY = 'dopa4-worksheet-v1';
+
+// Charge les données sauvegardées ou retourne null
+function loadSavedData() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      console.log('Données restaurées depuis localStorage');
+      return JSON.parse(saved);
+    }
+  } catch (e) {
+    console.log('Erreur lecture localStorage:', e);
+  }
+  return null;
+}
+
+// Sauvegarde toutes les données dans localStorage
+function saveToStorage() {
+  try {
+    // Récupère toutes les valeurs des inputs charges fixes
+    const chargeValues = [];
+    document.querySelectorAll('.charge-input').forEach(input => {
+      chargeValues.push(input.value);
+    });
+
+    const data = {
+      charges: chargeValues,
+      revenus: document.getElementById('revenusInput').value,
+      jourSalaire: document.getElementById('jourSalaire').value,
+      pct: state.pct,
+      checklist: state.checklist,
+      actions: state.actions
+    };
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    console.log('Données sauvegardées dans localStorage');
+  } catch (e) {
+    console.log('Erreur sauvegarde localStorage:', e);
+  }
+}
+
+// Restaure les données sauvegardées dans les inputs et le state
+function restoreFromStorage(saved) {
+  // Restaure les inputs charges fixes
+  if (saved.charges) {
+    const inputs = document.querySelectorAll('.charge-input');
+    saved.charges.forEach((val, i) => {
+      if (inputs[i] && val) inputs[i].value = val;
+    });
+  }
+
+  // Restaure le revenu
+  if (saved.revenus) {
+    document.getElementById('revenusInput').value = saved.revenus;
+  }
+
+  // Restaure le jour de salaire
+  if (saved.jourSalaire) {
+    document.getElementById('jourSalaire').value = saved.jourSalaire;
+  }
+
+  // Restaure les pourcentages
+  if (saved.pct) {
+    state.pct.courantes = saved.pct.courantes;
+    state.pct.plaisir = saved.pct.plaisir;
+    state.pct.epargne = saved.pct.epargne;
+  }
+
+  // Restaure les checklists
+  if (saved.checklist) {
+    saved.checklist.forEach((checked, i) => {
+      if (checked) toggleCheck(i);
+    });
+  }
+
+  // Restaure le plan d'action
+  if (saved.actions) {
+    saved.actions.forEach((done, i) => {
+      if (done) toggleAction(i);
+    });
+  }
+}
+
 // ===== STATE =====
 const state = {
   pct: { courantes: 60, plaisir: 20, epargne: 20 },
@@ -1038,6 +1122,9 @@ function recalc() {
   document.getElementById('prog2').className = 'progress-seg' + (revenus > 0 && totalPct === 100 ? ' done' : '');
   document.getElementById('prog3').className = 'progress-seg' + (jour > 0 ? ' done' : '');
   document.getElementById('prog4').className = 'progress-seg' + (state.actions.filter(Boolean).length >= 5 ? ' done' : '');
+
+  // Sauvegarde automatique à chaque modification
+  saveToStorage();
 }
 
 // ===== PERCENTAGES =====
@@ -1097,6 +1184,7 @@ function toggleCheck(i) {
   const text = document.getElementById('checkText' + i);
   box.className = 'check-box' + (state.checklist[i] ? ' checked' : '');
   text.className = 'check-text' + (state.checklist[i] ? ' done' : '');
+  saveToStorage();
 }
 
 // ===== ACTION PLAN =====
@@ -1128,7 +1216,7 @@ function toggleAction(i) {
   const task = document.getElementById('actionTask' + i);
   box.className = 'check-box' + (state.actions[i] ? ' checked' : '');
   task.className = 'action-task' + (state.actions[i] ? ' done' : '');
-  recalc();
+  recalc(); // recalc() appelle déjà saveToStorage()
 }
 
 // ===== EXPORT =====
@@ -1167,6 +1255,14 @@ function exportData() {
 // ===== INIT =====
 initChecklist();
 initActions();
+
+// Restaure les données sauvegardées si elles existent
+const savedData = loadSavedData();
+if (savedData) {
+  restoreFromStorage(savedData);
+}
+
+// Recalcule tout (avec ou sans données restaurées)
 recalc();
 </script>
 
