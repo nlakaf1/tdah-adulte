@@ -587,20 +587,6 @@ body {
 }
 .next-btn:active { transform: translateY(0); }
 
-.btn-group {
-  display: flex;
-  gap: 10px;
-  margin-top: 24px;
-}
-.btn-group .next-btn { flex: 1; }
-.btn-secondary {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
-  box-shadow: none;
-}
 
 /* ===== FOOTER ===== */
 .footer {
@@ -930,10 +916,7 @@ body {
 
     <div class="tip-box" style="margin-top: 16px;">🧠 Le lendemain de chaque revenu, l'argent est automatiquement distribué. Tu n'as plus besoin d'y penser.</div>
 
-    <div class="btn-group">
-      <button class="next-btn btn-secondary" onclick="window.print()">🖨️ Imprimer / PDF</button>
-      <button class="next-btn" onclick="exportData()">📥 Exporter mes données</button>
-    </div>
+    <button class="next-btn" onclick="window.print()">🖨️ Imprimer / PDF</button>
   </div>
 
   <!-- FOOTER -->
@@ -1217,39 +1200,6 @@ function toggleAction(i) {
   box.className = 'check-box' + (state.actions[i] ? ' checked' : '');
   task.className = 'action-task' + (state.actions[i] ? ' done' : '');
   recalc(); // recalc() appelle déjà saveToStorage()
-}
-
-// ===== EXPORT =====
-function exportData() {
-  const charges = {};
-  document.querySelectorAll('.charge-input').forEach((input, i) => {
-    if (input.value) {
-      const label = input.closest('.field-row').querySelector('.name').textContent;
-      charges[label] = input.value;
-    }
-  });
-
-  const data = {
-    date: new Date().toLocaleDateString('fr-FR'),
-    charges_fixes: charges,
-    total_charges: document.getElementById('totalCharges').textContent,
-    revenus: document.getElementById('revenusInput').value,
-    repartition: {
-      courantes: state.pct.courantes + '%',
-      plaisir: state.pct.plaisir + '%',
-      epargne: state.pct.epargne + '%'
-    },
-    jour_salaire: document.getElementById('jourSalaire').value,
-    jour_virements: document.getElementById('jourVirement').textContent
-  };
-
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'mes-donnees-dopasysteme.json';
-  a.click();
-  URL.revokeObjectURL(url);
 }
 
 // ===== INIT =====
