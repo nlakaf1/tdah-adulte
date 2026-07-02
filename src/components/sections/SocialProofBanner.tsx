@@ -12,7 +12,7 @@ export default function SocialProofBanner() {
 
   return (
     // Bandeau pleine largeur avec fond bleu profond et texte clair
-    <section className="bg-blue-deep text-white py-10 px-4 sm:px-6 lg:px-8">
+    <section className="bg-wine-deep text-white py-10 px-4 sm:px-6 lg:px-8">
       {/* Conteneur centré avec largeur max */}
       <div className="max-w-3xl mx-auto text-center space-y-4">
 

@@ -33,7 +33,7 @@ export default function HeroSection() {
 
   return (
     // Section plein écran avec dégradé bleu pâle
-    <SectionWrapper className="min-h-screen flex items-center bg-gradient-to-b from-blue-pale to-background pt-16">
+    <SectionWrapper className="min-h-screen flex items-center bg-gradient-to-b from-wine-pale to-background pt-16">
       {/* Grid responsive : 1 col mobile, 2 cols desktop */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
 
@@ -81,15 +81,15 @@ export default function HeroSection() {
         {/* ===== COLONNE DROITE — IMAGE DU LIVRE ===== */}
         <div className="relative flex items-center justify-center">
           {/* Cercle décoratif flou derrière le livre */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-blue-medium to-blue-deep rounded-full blur-3xl opacity-15" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-wine-medium to-wine-deep rounded-full blur-3xl opacity-15" />
 
-          {/* Bannière "Duo Gagnant" — livre + carnet DOPA4 avec ombre portée */}
+          {/* Image du livre (fond transparent) avec ombre portée */}
           <Image
-            src="/images/hero-duo-gagnant.jpeg"
-            alt="Le duo gagnant TDAH adulte : livre Gérer Son Argent Sans Volonté Ni Discipline et carnet de bord DOPA4 90 jours par Maxime Wells"
-            width={970}
-            height={600}
-            className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl"
+            src="/images/hero-livre-tdah.png"
+            alt="Livre TDAH Adulte : Comment Gérer Son Argent Sans Volonté Ni Discipline, par Maxime Wells"
+            width={800}
+            height={1067}
+            className="relative z-10 h-auto w-full max-w-[420px] drop-shadow-2xl"
             priority
           />
         </div>

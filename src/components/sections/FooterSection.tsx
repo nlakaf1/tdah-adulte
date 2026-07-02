@@ -12,7 +12,7 @@ export default function FooterSection() {
 
   return (
     // Footer avec fond bleu fonce et texte blanc semi-transparent
-    <footer className="bg-blue-dark text-white/80">
+    <footer className="bg-wine-dark text-white/80">
       {/* Conteneur centre avec largeur max et padding responsive */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Nom du site en gras */}

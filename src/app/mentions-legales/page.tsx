@@ -42,7 +42,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-2xl font-bold text-foreground mb-1">
             1. Éditeur du site
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+          <div className="w-12 h-1 bg-primary rounded mb-6" />
 
           {/* Informations sur la personne physique éditrice du site */}
           <div className="space-y-2 text-muted-foreground leading-relaxed">
@@ -60,7 +60,7 @@ export default function MentionsLegalesPage() {
               <span className="font-semibold text-foreground">Site web :</span>{" "}
               <a
                 href="https://dopasysteme.com"
-                className="text-blue-600 hover:underline transition-colors"
+                className="text-primary hover:underline transition-colors"
               >
                 dopasysteme.com
               </a>
@@ -71,7 +71,7 @@ export default function MentionsLegalesPage() {
               </span>{" "}
               <a
                 href="mailto:contact@dopasysteme.com"
-                className="text-blue-600 hover:underline transition-colors"
+                className="text-primary hover:underline transition-colors"
               >
                 contact@dopasysteme.com
               </a>
@@ -86,7 +86,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-2xl font-bold text-foreground mb-1">
             2. Hébergeur du site
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+          <div className="w-12 h-1 bg-primary rounded mb-6" />
 
           {/* Informations sur Vercel, la plateforme d'hébergement */}
           <div className="space-y-2 text-muted-foreground leading-relaxed">
@@ -108,7 +108,7 @@ export default function MentionsLegalesPage() {
                 href="https://vercel.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline transition-colors"
+                className="text-primary hover:underline transition-colors"
               >
                 vercel.com
               </a>
@@ -123,7 +123,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-2xl font-bold text-foreground mb-1">
             3. Propriété intellectuelle
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+          <div className="w-12 h-1 bg-primary rounded mb-6" />
 
           {/* Explique les droits sur le contenu du site et du livre */}
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -154,7 +154,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-2xl font-bold text-foreground mb-1">
             4. Limitation de responsabilité
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+          <div className="w-12 h-1 bg-primary rounded mb-6" />
 
           {/* Précise les limites de responsabilité de l'éditeur */}
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -188,7 +188,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-2xl font-bold text-foreground mb-1">
             5. Liens hypertextes
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+          <div className="w-12 h-1 bg-primary rounded mb-6" />
 
           {/* Politique concernant les liens internes et externes */}
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -205,7 +205,7 @@ export default function MentionsLegalesPage() {
               toute demande, contactez :{" "}
               <a
                 href="mailto:contact@dopasysteme.com"
-                className="text-blue-600 hover:underline transition-colors"
+                className="text-primary hover:underline transition-colors"
               >
                 contact@dopasysteme.com
               </a>
@@ -221,7 +221,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-2xl font-bold text-foreground mb-1">
             6. Cookies
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+          <div className="w-12 h-1 bg-primary rounded mb-6" />
 
           {/* Politique d'utilisation des cookies sur le site */}
           <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -245,7 +245,7 @@ export default function MentionsLegalesPage() {
           <h2 className="text-2xl font-bold text-foreground mb-1">
             7. Droit applicable et juridiction compétente
           </h2>
-          <div className="w-12 h-1 bg-blue-600 rounded mb-6" />
+          <div className="w-12 h-1 bg-primary rounded mb-6" />
 
           {/* Précise la loi applicable en cas de litige */}
           <div className="space-y-4 text-muted-foreground leading-relaxed">

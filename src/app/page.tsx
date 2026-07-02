@@ -7,6 +7,7 @@
 
 import HeroSection from "@/components/sections/HeroSection";
 import SocialProofBanner from "@/components/sections/SocialProofBanner";
+import DuoGagnantSection from "@/components/sections/DuoGagnantSection";
 import EmailCaptureSection from "@/components/sections/EmailCaptureSection";
 import AboutUsSection from "@/components/sections/AboutUsSection";
 import FaqPreviewSection from "@/components/sections/FaqPreviewSection";
@@ -22,6 +23,9 @@ export default function Home() {
 
       {/* Section 1.5 : Bandeau preuve sociale — identification + conversion */}
       <SocialProofBanner />
+
+      {/* Section 1.7 : Le Duo Gagnant — présentation de la solution (livre + carnet) */}
+      <DuoGagnantSection />
 
       {/* Section 2 : Capture d'email - Point de conversion principal */}
       <EmailCaptureSection />
