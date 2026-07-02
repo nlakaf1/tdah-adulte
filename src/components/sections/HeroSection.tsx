@@ -83,13 +83,13 @@ export default function HeroSection() {
           {/* Cercle décoratif flou derrière le livre */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-blue-medium to-blue-deep rounded-full blur-3xl opacity-15" />
 
-          {/* Image du livre avec ombre portée */}
+          {/* Bannière "Duo Gagnant" — livre + carnet DOPA4 avec ombre portée */}
           <Image
-            src="/images/hero-book.png"
-            alt="Livre TDAH Gérer Son Argent Sans Volonté Ni Discipline par Maxime Wells - Méthode DOPA4 pour adultes"
-            width={2300}
-            height={2300}
-            className="relative z-10 drop-shadow-2xl scale-125 -translate-y-8"
+            src="/images/hero-duo-gagnant.jpeg"
+            alt="Le duo gagnant TDAH adulte : livre Gérer Son Argent Sans Volonté Ni Discipline et carnet de bord DOPA4 90 jours par Maxime Wells"
+            width={970}
+            height={600}
+            className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl"
             priority
           />
         </div>
